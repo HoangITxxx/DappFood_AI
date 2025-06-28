@@ -1,0 +1,630 @@
+{
+	"compiler": {
+		"version": "0.8.30+commit.73712a01"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "id",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "data",
+						"type": "string"
+					},
+					{
+						"indexed": true,
+						"internalType": "string",
+						"name": "dataType",
+						"type": "string"
+					},
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "timestamp",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint8",
+						"name": "rating",
+						"type": "uint8"
+					},
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "childContract",
+						"type": "address"
+					}
+				],
+				"name": "DataStored",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "childAddress",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "childIndex",
+						"type": "uint256"
+					}
+				],
+				"name": "NewChildContract",
+				"type": "event"
+			},
+			{
+				"inputs": [],
+				"name": "MAX_CHILD_CONTRACTS",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "childContracts",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "childCount",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes32",
+						"name": "",
+						"type": "bytes32"
+					}
+				],
+				"name": "dataHashToId",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "dataIdCounter",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "dataToChild",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "dataTypeToIds",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "startId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "count",
+						"type": "uint256"
+					}
+				],
+				"name": "getBatchData",
+				"outputs": [
+					{
+						"internalType": "string[]",
+						"name": "data",
+						"type": "string[]"
+					},
+					{
+						"internalType": "string[]",
+						"name": "dataTypes",
+						"type": "string[]"
+					},
+					{
+						"internalType": "uint256[]",
+						"name": "timestamps",
+						"type": "uint256[]"
+					},
+					{
+						"internalType": "uint8[]",
+						"name": "ratings",
+						"type": "uint8[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getChildCount",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "id",
+						"type": "uint256"
+					}
+				],
+				"name": "getData",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint8",
+						"name": "",
+						"type": "uint8"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes32",
+						"name": "dataHash",
+						"type": "bytes32"
+					}
+				],
+				"name": "getDataByHash",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint8",
+						"name": "",
+						"type": "uint8"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint8",
+						"name": "rating",
+						"type": "uint8"
+					},
+					{
+						"internalType": "uint256",
+						"name": "limit",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "offset",
+						"type": "uint256"
+					}
+				],
+				"name": "getDataByRating",
+				"outputs": [
+					{
+						"internalType": "uint256[]",
+						"name": "ids",
+						"type": "uint256[]"
+					},
+					{
+						"internalType": "string[]",
+						"name": "data",
+						"type": "string[]"
+					},
+					{
+						"internalType": "string[]",
+						"name": "dataTypes",
+						"type": "string[]"
+					},
+					{
+						"internalType": "uint256[]",
+						"name": "timestamps",
+						"type": "uint256[]"
+					},
+					{
+						"internalType": "uint8[]",
+						"name": "ratings",
+						"type": "uint8[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "dataType",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "limit",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "offset",
+						"type": "uint256"
+					}
+				],
+				"name": "getDataByType",
+				"outputs": [
+					{
+						"internalType": "uint256[]",
+						"name": "ids",
+						"type": "uint256[]"
+					},
+					{
+						"internalType": "string[]",
+						"name": "data",
+						"type": "string[]"
+					},
+					{
+						"internalType": "string[]",
+						"name": "dataTypes",
+						"type": "string[]"
+					},
+					{
+						"internalType": "uint256[]",
+						"name": "timestamps",
+						"type": "uint256[]"
+					},
+					{
+						"internalType": "uint8[]",
+						"name": "ratings",
+						"type": "uint8[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "dataType",
+						"type": "string"
+					}
+				],
+				"name": "getDataTypeCount",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "limit",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "offset",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "dataType",
+						"type": "string"
+					}
+				],
+				"name": "getLatestData",
+				"outputs": [
+					{
+						"internalType": "uint256[]",
+						"name": "ids",
+						"type": "uint256[]"
+					},
+					{
+						"internalType": "string[]",
+						"name": "data",
+						"type": "string[]"
+					},
+					{
+						"internalType": "string[]",
+						"name": "dataTypes",
+						"type": "string[]"
+					},
+					{
+						"internalType": "uint256[]",
+						"name": "timestamps",
+						"type": "uint256[]"
+					},
+					{
+						"internalType": "uint8[]",
+						"name": "ratings",
+						"type": "uint8[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint8",
+						"name": "rating",
+						"type": "uint8"
+					}
+				],
+				"name": "getRatingCount",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "owner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint8",
+						"name": "",
+						"type": "uint8"
+					},
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "ratingToIds",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "data",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "dataType",
+						"type": "string"
+					},
+					{
+						"internalType": "uint8",
+						"name": "rating",
+						"type": "uint8"
+					}
+				],
+				"name": "storeData",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "timeToIds",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/MasterStorage.sol": "MasterStorage"
+		},
+		"evmVersion": "prague",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": true,
+			"runs": 200
+		},
+		"remappings": [],
+		"viaIR": true
+	},
+	"sources": {
+		"contracts/ChildStorage.sol": {
+			"keccak256": "0x3415f29c896c3aa26f30e83d7bc5c4b0cb9f8873ef8336467b7cd34b10af68ed",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://36b03baaa41b4e27a31022fc1a7051424c69f6bb420959621ae3968cd1b9fde5",
+				"dweb:/ipfs/QmTsHJz2EgdJ5af283MhQF2kU5NtyGRRrWETEBdQReTc1n"
+			]
+		},
+		"contracts/MasterStorage.sol": {
+			"keccak256": "0xcfc3aad5fa94a7b6573005e067bc8685d7ddfb6e645cf308b8d3469d24ec6105",
+			"urls": [
+				"bzz-raw://2378b3a5492da58c52c29391d25a207aaed33bc21c961bb036c7ea47d55f1fca",
+				"dweb:/ipfs/QmXjFQ1YKa1e9evaAHWstwFtDDyQXiJGi1kooqUMiRJJs9"
+			]
+		}
+	},
+	"version": 1
+}
